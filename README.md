@@ -1,4 +1,14 @@
-# Power of Symbolic Planning: DFS-based DouDizhu Agent
+# The Underappreciated Power of Symbolic Planning in Imperfect-Information Games
+
+## Abstract
+
+DouDizhu ("Fighting the Landlord") is a challenging imperfect-information card game that has become a benchmark for modern artificial intelligence. Recent advances, particularly DouZero and its extensions, have achieved impressive performance through deep reinforcement learning with massive parameter counts—often exceeding one billion parameters and requiring days or weeks of GPU training. This paper asks a fundamental question: Is such massive parameterization truly necessary?
+
+We answer in the negative. We present a purely symbolic DouDizhu agent that combines depth-first search (DFS) for shortest-path planning with handcrafted heuristics, including an orphan card strategy and weak-hand conservation mode. Without any learning, neural networks, or training data, our DFS symbolic agent achieves a 90.2% win rate against random opponents across 10,000 unseen games—just 5.5 percentage points behind DouZero's 95.7% win rate, despite using zero trainable parameters.
+
+To contextualize this result, we also develop a lightweight neuro-symbolic hybrid (≈260K parameters) that uses a neural move-type classifier with a symbolic resolver. This agent reaches 89.1% win rate—marginally below our pure symbolic baseline. Genome augmentation provides no meaningful improvement at scale. Our findings demonstrate that careful symbolic design remains highly competitive in structured imperfect-information games, challenging the prevailing assumption that deep learning is always necessary for high performance.
+
+**Keywords:** DouDizhu, symbolic AI, depth-first search, neuro-symbolic AI, imperfect-information games, reinforcement learning
 
 A pure symbolic planning agent for DouDizhu ("Fighting the Landlord") that achieves 90%+ win rates against RandomAgent at zero parameter cost, rivaling deep reinforcement learning baselines.
 
